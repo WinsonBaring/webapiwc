@@ -1,6 +1,19 @@
 @webapiwc_HostAddress = http://localhost:5249
 
-GET {{webapiwc_HostAddress}}/weatherforecast/
+GET {{webapiwc_HostAddress}}/api/todo/
 Accept: application/json
 
 ###
+GET {{webapiwc_HostAddress}}/api/todo/3fa85f64-5717-4562-b3fc-2c963f66afa6
+Accept: application/json
+
+###
+POST {{webapiwc_HostAddress}}/api/todo/
+Content-Type: application/json
+
+{
+    "name": "Test",
+    "isDone": false
+}
+###
+GET {{webapiwc_HostAddress}}/api/user/1/todos

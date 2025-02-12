@@ -10,6 +10,7 @@ public class AppDbContext : DbContext
 
      }
 
-    public DbSet<Todo> Todo { get; set; }
+    public DbSet<TodoModel> Todo { get; set; }
+    public DbSet<UserModel> User { get; set; }
     
 }

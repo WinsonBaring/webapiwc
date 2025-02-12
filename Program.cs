@@ -40,6 +40,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.MapUserEndpoints();
 app.MapTodoEndpoints();
 app.MapControllers();
 

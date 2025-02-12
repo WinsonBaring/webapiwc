@@ -1,0 +1,15 @@
+@webapiwc_HostAddress = http://localhost:5249
+
+### to create a user
+POST {{webapiwc_HostAddress}}/api/user
+Content-Type: application/json
+
+{
+    "name": "Testt User",
+    "email": "test@example.com", 
+    "password": "password123"
+}
+
+### get all todos for a user
+GET {{webapiwc_HostAddress}}/api/user/1/todos
+

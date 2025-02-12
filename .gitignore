@@ -1,0 +1,69 @@
+# Build files
+bin/
+obj/
+out/
+
+# User-specific files
+.vscode/
+*.user
+*.suo
+*.plist
+*.userosscache
+*.sln.docstates
+
+# Rider & JetBrains
+.idea/
+*.iml
+
+# Logs & crash dumps
+*.log
+*.tlog
+*.dmp
+
+# Packages
+packages/
+*.nupkg
+project.lock.json
+project.assets.json
+nuget.lock
+artifacts/
+
+# .NET dependencies
+**/bin/
+**/obj/
+*.pdb
+*.cache
+*.config
+*.csproj.user
+*.dbmdl
+*.jfm
+
+# Entity Framework
+migrations/
+
+# ASP.NET Core
+appsettings.json
+appsettings.Development.json
+
+# IIS
+.vs/
+.history/
+*.vspscc
+*.vspcc
+*.scc
+
+# Resharper
+_ReSharper*
+*.DotSettings.user
+
+# Misc
+*.sqlite
+*.sqlite3
+.env
+secrets.json
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+Migrations

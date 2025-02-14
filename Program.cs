@@ -45,7 +45,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-var key = Encoding.UTF8.GetBytes("YourSuperSecretKey123!"); 
+var key = Encoding.UTF8.GetBytes("MineSuperSecretKey123!"); 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>

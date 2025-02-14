@@ -5,3 +5,16 @@
 
 ### get a todo by id
 GET {{webapiwc_HostAddress}}/api/todo/{{todoId}}
+
+### get all todos
+GET {{webapiwc_HostAddress}}/api/todo
+
+### create a todo
+POST {{webapiwc_HostAddress}}/api/todo
+
+
+### update a todo
+PUT {{webapiwc_HostAddress}}/api/todo/{{todoId}}
+
+### delete a todo
+DELETE {{webapiwc_HostAddress}}/api/todo/{{todoId}}

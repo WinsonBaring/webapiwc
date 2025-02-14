@@ -18,11 +18,12 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbCo
             .WithMany(u => u.Todos)    // UserModel has many Todos
             .HasForeignKey(t => t.UserId) // Foreign key in TodoModel
             .OnDelete(DeleteBehavior.Cascade); // Delete Todos if User is deleted
-
-        modelBuilder.Entity<UserModel>()
-            .HasMany(u => u.Todos)
-            .WithOne(t => t.User)
-            .HasForeignKey(t => t.UserId);
+        
+        // modelBuilder.Entity<TodoModel>()
+        //     .HasOne(t => t.ApplicationUser)       // TodoModel has one User
+        //     .WithMany(u => u.Todos)    // UserModel has many Todos
+        //     .HasForeignKey(t => t.applicationUserId) // Foreign key in TodoModel
+        //     .OnDelete(DeleteBehavior.Cascade); // Delete Todos if User is deleted
 
         modelBuilder.Entity<ApplicationUser>()
             .HasMany(u => u.Todos)

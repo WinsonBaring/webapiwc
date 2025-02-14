@@ -2,38 +2,23 @@
  
 ## Prerequisites
 
-- .NET SDK  
-- PostgreSQL (if using Postgres)  
-- `dotnet-ef` tool (`dotnet tool install --global dotnet-ef`)  
-
-## 1. Install EF Core and PostgreSQL provider
-
+- install packages
 ```sh
-dotnet add package Microsoft.EntityFrameworkCore.Design  
-dotnet add package Microsoft.EntityFrameworkCore.Tools  
-dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL  
+dotnet restore
+```
+- run docker first and create a postgres database
+```sh
+docker run -d --name pg -e POSTGRES_PASSWORD=pg -p 5249:5432 volumes:/var/lib/postgresql/data
 ```
 
-## 2. Create a new migration
-
+- add this alias script to your .zshrc file and run it in cli
 ```sh
-dotnet ef migrations add InitialCreate
+alias ef_reset="rm -rf Migrations && dotnet ef database drop -f && dotnet ef migrations add InitialCreate && dotnet ef database update && dotnet clean && dotnet build && dotnet run"
 ```
 
-## 3. Update the database
-
+- check in swagger ui
 ```sh
-dotnet ef database update
+https://localhost:5249/swagger
 ```
 
 
-## 4. Run the application
-
-```sh
-dotnet run
-```
-
-## 5. Open the Swagger UI
-```sh
-https://localhost:<PORT>/swagger
-```

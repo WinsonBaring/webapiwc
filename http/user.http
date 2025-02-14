@@ -1,4 +1,5 @@
 @webapiwc_HostAddress = http://localhost:5249
+@userId = fb7eabf2-5929-4561-830c-87166b265eed
 
 ### to create a user
 POST {{webapiwc_HostAddress}}/api/user
@@ -10,6 +11,23 @@ Content-Type: application/json
     "password": "password123"
 }
 
+### get all users
+GET {{webapiwc_HostAddress}}/api/user
+
+### add a todo base on user id
+POST {{webapiwc_HostAddress}}/api/user/{{userId}}/todos
+Content-Type: application/json
+
+{
+  "title": "Sample Todo",
+  "createdAt": "2024-02-14T10:00:00Z",
+  "deletedAt": null,
+  "isDone": false,
+  "description": "This is a sample todo",
+  "userId": "fb7eabf2-5929-4561-830c-87166b265eed"
+}
+
 ### get all todos for a user
-GET {{webapiwc_HostAddress}}/api/user/1/todos
+GET {{webapiwc_HostAddress}}/api/user/{{userId}}/todos
+
 

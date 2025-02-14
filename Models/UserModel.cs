@@ -18,6 +18,7 @@ public class UserModel
     [JsonIgnore] // Prevents exposing hashed password in API responses
     public string PasswordHash { get; set; } = string.Empty;
 
+
     [JsonIgnore]
     public virtual ICollection<TodoModel> Todos { get; set; } = new List<TodoModel>();
 }

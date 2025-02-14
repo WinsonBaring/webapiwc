@@ -1,14 +1,7 @@
 @webapiwc_HostAddress = http://localhost:5249
+@userId = 38f826e8-a1c2-4844-a71f-aa19e7a7827f
+@todoId = 11a0177d-acbf-45e8-a172-5b2093e18494
 
-### get all todo base on user id
-GET {{webapiwc_HostAddress}}/api/user/1/todos
 
-### to create a todo base on user id  
-POST {{webapiwc_HostAddress}}/api/user/04c3e2dd-e69e-4f1a-9948-304780e5924f/todos
-Content-Type: application/json
-{
-    "title": "Sample Todo",
-    "description": "This is a sample todo item",
-    "isDone": false,
-    "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-}
+### get a todo by id
+GET {{webapiwc_HostAddress}}/api/todo/{{todoId}}

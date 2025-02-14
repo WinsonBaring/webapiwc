@@ -1,0 +1,35 @@
+@baseUrl = http://localhost:5249
+@id = 1
+
+### Get all users
+GET {{baseUrl}}/api/applicationuser
+
+### Get a user by id
+GET {{baseUrl}}/api/applicationuser/{{id}}
+
+### Register a user
+POST {{baseUrl}}/api/applicationuser/register
+Content-Type: application/json
+
+{
+    "email": "winsonbaring10@gmail.com",
+    "password": "Winson123@",
+    "fullName": "Winson Baring"
+}
+
+### Login a user
+POST {{baseUrl}}/api/applicationuser/login
+Content-Type: application/json
+
+{
+    "fullName": "Winson Baring",
+    "email": "winsonbaring10@gmail.com",
+    "password": "Winson123@"
+}
+
+### Logout a user
+POST {{baseUrl}}/api/applicationuser/logout
+
+### Get all todos
+GET {{baseUrl}}/api/todos
+

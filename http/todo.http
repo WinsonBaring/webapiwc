@@ -1,6 +1,7 @@
 @webapiwc_HostAddress = http://localhost:5249
-@userId = 38f826e8-a1c2-4844-a71f-aa19e7a7827f
-@todoId = 11a0177d-acbf-45e8-a172-5b2093e18494
+@userId = dac02e6b-6912-436f-8051-00813a59ba2b
+@todoId = 3b5957eb-5e4a-4c3f-a79b-778b0998de86
+@applicationUserId = a4f5394c-6b3f-4229-896c-5c6995b8da09
 
 
 ### get a todo by id
@@ -9,12 +10,36 @@ GET {{webapiwc_HostAddress}}/api/todo/{{todoId}}
 ### get all todos
 GET {{webapiwc_HostAddress}}/api/todo
 
+### get all uncompleted todos
+GET {{webapiwc_HostAddress}}/api/todo/uncompleted
+
+### get all completed todos
+GET {{webapiwc_HostAddress}}/api/todo/completed
+
 ### create a todo
 POST {{webapiwc_HostAddress}}/api/todo
+Content-Type: application/json
 
+{
+    "title": "I wanted to buy a orange",
+    "description": "Buy groceries",
+    "isDone": false,
+    "applicationUserId": "{{applicationUserId}}",
+    "userId": "{{userId}}"
+}
 
 ### update a todo
 PUT {{webapiwc_HostAddress}}/api/todo/{{todoId}}
+Content-Type: application/json
+
+{
+    "id": "{{todoId}}",
+    "title": "heyyy i learned sometihng",
+    "description": "Buy groceries",
+    "isDone": true,
+    "applicationUserId": "{{applicationUserId}}",
+    "userId": "{{userId}}"
+}
 
 ### delete a todo
 DELETE {{webapiwc_HostAddress}}/api/todo/{{todoId}}

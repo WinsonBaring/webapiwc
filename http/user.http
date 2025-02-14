@@ -1,5 +1,5 @@
 @webapiwc_HostAddress = http://localhost:5249
-@userId = fb7eabf2-5929-4561-830c-87166b265eed
+@userId = dac02e6b-6912-436f-8051-00813a59ba2b
 
 ### to create a user
 POST {{webapiwc_HostAddress}}/api/user

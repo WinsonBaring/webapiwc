@@ -14,6 +14,13 @@ public static class TodoEndpoints
             return await db.Todo.ToListAsync();
         });
 
+        // get a todo by id lcoal/tood/123123123
+        group.MapGet("/{id}", async (Guid id, AppDbContext db) => {
+            var todo = await db.Todo.FindAsync(id);
+            if (todo == null)
+                return Results.NotFound();
+            return Results.Ok(todo);
+        });
         // create a todo
         group.MapPost("/", async (TodoModel todo, AppDbContext db) => {
             await db.Todo.AddAsync(todo);
@@ -22,7 +29,7 @@ public static class TodoEndpoints
         });
 
         // update a todo
-        group.MapPut("/{id}", async (int id, TodoModel todo, AppDbContext db) => {
+        group.MapPut("/{id}", async (Guid id, TodoModel todo, AppDbContext db) => {
             var todoToUpdate = await db.Todo.FindAsync(id);
             if (todoToUpdate == null)
                 return Results.NotFound();
